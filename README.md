@@ -1,6 +1,7 @@
 # Product Delivery
 
 ### Requirements first phase
+
 1. 19 actions :ballot_box_with_check:
 2. 26 classes :ballot_box_with_check:
 3. Private/Protected attributes :ballot_box_with_check:
@@ -12,127 +13,162 @@
 ## Product (abstract)
 - name
 - price
-- quantity
 - weight
 - measurements
 
-    ### Drink
-    - isAlcoholic
-    - hasSugar
-    - calories
-  
-    ### Food
+  ### Drink
+	- isAlcoholic
+	- hasSugar
+	- calories
     - ingredients
-    - calories
-    - allergens
-  
-    ### Book
-    - author
-    - numberOfPages
-    - releaseDate
-    
-    ### Flower    
-    - species
-    - color
 
-    ### Bouquet
-    - speciesUsed (List -> ArrayList)
-    - scentPallete
-  
-    ### Medicine
-    - ingredients
-    - allergens
-    - contraindications
+  ### Food
+	- ingredients
+	- calories
+	- allergens
 
-## Shop (abstract)
-- name
-- owner
-- deliveryEmployees (List -> ArrayList)
-- address
-- rating
+  ### Book
+	- author
+	- numberOfPages
+	- releaseDate
 
-    ### Restaurant
-    - foodMenu (List -> ArrayList)
-    - drinksMenu (List -> ArrayList)
-  
-    ### Bar
-    - drinksMenu (List -> ArrayList)
-  
-    ### Library
-    - books (List -> ArrayList)
-  
-    ### Florist
-    - flowers (List -> ArrayList)
-    - bouquets (List -> ArrayList)
-  
-    ### Pharmacy
-    - medicines (List -> ArrayList)
+  ### Flower
+	- species
+	- color
 
-## User
+  ### Bouquet
+	- speciesUsed (List -> ArrayList)
+	- scentPallete
+    - wrapping
+
+  ### Medicine
+	- ingredients
+	- allergens
+	- contraindications
+	- contraindications
+
+## User (abstract)
 - name
 - email
 - password
 - phoneNumber
 
-    ### Customer
-    - preferredAddress
+  ### Customer
+	- preferredAddress
+    - preferredPaymentMethod
 
-    ### Owner
-    - shop    
+  ### Owner
+	- shop
 
-    ### DeliveryEmployee
-    - carNumber
-    - averageOrders
+  ### DeliveryEmployee
+	- carNumber
+	- averageOrdersPerDay
+    - averageDeliveryTime
 
-    ### Administrator
-    - license
+  ### Administrator
+	- licenseNumber
 
-## Order
+## Shop (abstract)
+- name
+- owner
+- address
+- rating
+- deliveryEmployees (List -> ArrayList)
+- products (List -> ArrayList)
+
+  ### Restaurant
+	- foodMenu (List -> ArrayList)
+	- drinksMenu (List -> ArrayList)
+
+  ### Bar
+	- drinksMenu (List -> ArrayList)
+
+  ### Library
+	- books (List -> ArrayList)
+
+  ### Florist
+	- flowers (Set -> HashSet)
+	- bouquets (Set -> HashSet)
+
+  ### Pharmacy
+	- medicines (List -> ArrayList)
+
+## Shared.Order
+- orderId
 - customer
 - shop
 - deliveryEmployee
+- orderStatus
+- orderDate
+- deliveryDate
+- deliveryAddress
+- paymentMethod
 - totalPrice
 - products (List -> ArrayList)
-- address
-- ETA
 
 ## IRegistration (Interface)
 - logIn()
 - logOut()
-- signInAdmin()
-- signInCustomer()
-- signInDeliveryEmployee()
+- registerAdmin()
+- registerOwner()
+- registerCustomer()
+- registerDeliveryEmployee()
 
-    ### Registration (Singleton)
-    - users (Set -> HashSet)
-    - currentUser
+  ### Registration (Singleton)
+	- users (Set -> HashSet)
+	- currentUser
+
+## Data (Singleton)
+- shops (List -> ArrayList)
+- products (List -> ArrayList)
+- orders (List -> ArrayList)
 
 ## IService (Interface)
-- shops (List -> ArrayList)
-- orders (List -> ArrayList)
-- currentUser
-- shopId
-- orderId
+- showMenu()
+- useMenu()
 
-    ### AdminService (Singleton)
-    - listAllShops()
+	### IAdminService (Interface)
+	- listAllShops()
     - listAllProducts()
     - listAllOrders()
     - addShop()
-    - deleteShop()
+    - removeShop()
     - addProduct()
-    - deleteProduct()
-
-    ### CustomerService (Singleton)
+    - removeProduct()
+    - removeOrder()
+	
+	#### AdminService (Singleton)
+	- data
+	
+	### IOwnerService (Interface)
     - listAllShops()
+	- listAllProducts()
+	- listAllOrders()
+	- addProduct()
+	- removeProduct()
+	- removeOrder()
+    
+	#### OwnerService (Singleton)
+    - data
+    - orders (List -> ArrayList)
+    - shops (List -> ArrayList)
+
+	### ICustomerService (Interface)
+	- listAllShops()
     - listAllProducts()
     - addOrder()
-    - cancelOrder()
-    - getPopularShops()
-  
-    ### DeliveryEmployeeService (Singleton)
+    - removeOrder()
+	
+	#### CustomerService (Singleton)
+    - data
+	
+	### IDeliveryEmployeeService (Interface)
     - listAllOrders()
-    - takeOrder()
+	- takeOrder()
+    - deliverOrder()
+	
+	#### DeliveryEmployeeService (Singleton)
+	- data
 
 ## Main
 - calls for service class

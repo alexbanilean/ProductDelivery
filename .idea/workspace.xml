@@ -4,29 +4,84 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47ef8aed-d8e9-4e49-8905-ef1ca70f3400" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductDelivery.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="47ef8aed-d8e9-4e49-8905-ef1ca70f3400" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Factories/ProductFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Factories/ShopFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Product/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Product/Bouquet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Product/Drink.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Product/Flower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Product/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Product/Medicine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Product/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Registration/IRegistration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Registration/Registration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/DeliveryEmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/IAdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/IDeliveryEmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/IOwnerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/IService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/OwnerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shared/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shared/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shop/Bar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shop/Florist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shop/Library.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shop/Pharmacy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shop/Restaurant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Shop/Shop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/User/Administrator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/User/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/User/DeliveryEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/User/Owner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/User/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="509e88f3-6e0f-44f5-8f0c-680c2dbc36e6" />
+        <option name="url" value="https://github.com/alexbanilean/ProductDelivery" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NriwDuKrpuop7bhjd9OWT4r3Oh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,11 +90,14 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -51,8 +109,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680428839728</updated>
-      <workItem from="1680428840838" duration="3907000" />
+      <workItem from="1680428840838" duration="7177000" />
+      <workItem from="1680549472186" duration="43014000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1680432875029</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680432875029</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -63,10 +130,36 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
