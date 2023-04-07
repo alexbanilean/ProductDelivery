@@ -2,12 +2,12 @@
 
 ### Requirements first phase
 
-1. 19 actions :ballot_box_with_check:
-2. 26 classes :ballot_box_with_check:
+1. 19 actions (min. 8 actions) :ballot_box_with_check:
+2. 21 classes + 6 interfaces (min. 10 classes) :ballot_box_with_check:
 3. Private/Protected attributes :ballot_box_with_check:
 4. Collections used: List -> ArrayList, Set -> HashSet :ballot_box_with_check:
 5. Inheritance :ballot_box_with_check:
-6. 2 service classes :ballot_box_with_check:
+6. 4 service classes (min. 1 service class) :ballot_box_with_check:
 7. Main class which calls services :ballot_box_with_check:
 
 ## Product (abstract)
