@@ -1,10 +1,9 @@
 import java.util.Scanner;
-import Registration.Registration;
-import Service.AdminService;
-import Service.CustomerService;
-import Service.DeliveryEmployeeService;
-import Service.OwnerService;
-import User.Administrator;
+import registration.Registration;
+import service.AdminService;
+import service.CustomerService;
+import service.DeliveryEmployeeService;
+import service.OwnerService;
 
 public class Main {
     public static void main(String[] args) {

@@ -6,8 +6,41 @@
   <component name="ChangeListManager">
     <list default="true" id="47ef8aed-d8e9-4e49-8905-ef1ca70f3400" name="Changes" comment="Initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shared/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shared/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factories/ProductFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/ProductFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factories/ShopFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factories/ShopFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product/Bouquet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/Bouquet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/Drink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product/Flower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/Flower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/Food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/Medicine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Registration/IRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/registration/IRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Registration/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/registration/Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/DeliveryEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DeliveryEmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/IAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/IAdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/IDeliveryEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/IDeliveryEmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/IOwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/IOwnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/IService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/OwnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shared/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Bar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Florist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Florist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Pharmacy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/Administrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/DeliveryEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/DeliveryEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,21 +83,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -74,7 +107,11 @@
       <option name="presentableId" value="Default" />
       <updated>1680428839728</updated>
       <workItem from="1680428840838" duration="7177000" />
-      <workItem from="1680549472186" duration="43309000" />
+      <workItem from="1680549472186" duration="44026000" />
+      <workItem from="1681132034672" duration="2049000" />
+      <workItem from="1682348608867" duration="641000" />
+      <workItem from="1684162958490" duration="57000" />
+      <workItem from="1684574706840" duration="5811000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1680432875029</created>
@@ -90,7 +127,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680892392845</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial commit">
+      <created>1680892676109</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680892676109</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Initial commit">
+      <created>1680892735121</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680892735121</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
