@@ -1,5 +1,6 @@
 package registration;
 
+import service.AuditService;
 import user.*;
 
 import java.util.HashSet;
@@ -10,6 +11,7 @@ public class Registration implements IRegistration {
     private static final Registration registration = new Registration();
     private static HashSet<User> users = new HashSet<>();
     private static User currentUser = null;
+    private AuditService auditService = AuditService.getInstance();
 
     private Registration() {}
 
@@ -27,6 +29,8 @@ public class Registration implements IRegistration {
 
     @Override
     public int logIn(Scanner scanner) {
+        auditService.logAction("Login");
+
         // return 1 if admin
         // return 2 if owner
         // return 3 if customer
@@ -68,12 +72,15 @@ public class Registration implements IRegistration {
 
     @Override
     public void logOut(int userId, String username) {
+        auditService.logAction("Logout");
         currentUser = null;
         System.out.println("user " + username + " logged out.");
     }
 
     @Override
     public void registerAdmin(Scanner scanner) {
+        auditService.logAction("Register admin");
+
         Administrator administrator = new Administrator();
         administrator.read(scanner);
         administrator.setUserId(users.size() + 1);
@@ -85,6 +92,8 @@ public class Registration implements IRegistration {
 
     @Override
     public void registerOwner(Scanner scanner) {
+        auditService.logAction("Register owner");
+
         Owner owner = new Owner();
         owner.read(scanner);
         owner.setUserId(users.size() + 1);
@@ -96,6 +105,8 @@ public class Registration implements IRegistration {
 
     @Override
     public void registerCustomer(Scanner scanner) {
+        auditService.logAction("Register customer");
+
         Customer customer = new Customer();
         customer.read(scanner);
         customer.setUserId(users.size() + 1);
@@ -107,6 +118,8 @@ public class Registration implements IRegistration {
 
     @Override
     public void registerDeliveryEmployee(Scanner scanner) {
+        auditService.logAction("Register delivery employee");
+
         DeliveryEmployee deliveryEmployee = new DeliveryEmployee();
         deliveryEmployee.read(scanner);
         deliveryEmployee.setUserId(users.size() + 1);

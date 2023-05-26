@@ -16,15 +16,16 @@ public class OwnerService implements IOwnerService {
 
     private static OwnerService ownerService = new OwnerService();
     private Data data = Data.getData();
+    private AuditService auditService = AuditService.getInstance();
     private Registration registration = Registration.getRegistration();
-    private Owner owner = (Owner) registration.getCurrentUser();
+    private Owner owner = (Owner) Registration.getCurrentUser();
     private ArrayList<Order> orders;
     private ArrayList<Shop> shops;
     private ArrayList<String> shopNames;
 
     private OwnerService() {
 
-        shopNames = (ArrayList<String>) owner.getShops().stream().map(shop -> shop.getName())
+        shopNames = (ArrayList<String>) owner.getShops().stream().map(Shop::getName)
                                              .collect(Collectors.toList());
 
         orders = (ArrayList<Order>) data.getOrders().stream()
@@ -102,6 +103,8 @@ public class OwnerService implements IOwnerService {
 
     @Override
     public void listAllShops() {
+        auditService.logAction("List all shops");
+
         System.out.println("\n----------Shops----------");
 
         for(var shop : shops)
@@ -110,6 +113,8 @@ public class OwnerService implements IOwnerService {
 
     @Override
     public void listAllProducts() {
+        auditService.logAction("List all products");
+
         System.out.println("\n----------Products----------");
 
         for(var shop : shops) {
@@ -121,6 +126,8 @@ public class OwnerService implements IOwnerService {
 
     @Override
     public void listAllOrders() {
+        auditService.logAction("List all orders");
+
         System.out.println("\n----------Orders----------");
 
         for(var order : orders)
@@ -129,12 +136,12 @@ public class OwnerService implements IOwnerService {
 
     @Override
     public void addProduct(String shopName, Product product) {
+        auditService.logAction("Add product");
+
         try {
             data.getShops().stream()
                     .filter(shop -> shop.getName().equals(shopName))
-                    .findFirst()
-                    .orElse(null)
-                    .addProduct(product);
+                    .findFirst().ifPresent(shop -> shop.addProduct(product));
         }
         catch (Exception e) {
             System.out.println("Add product failed!");
@@ -143,22 +150,23 @@ public class OwnerService implements IOwnerService {
 
     @Override
     public void removeProduct(String productName) {
-        for(var shop : shops) {
-            var product = shop.getProducts().stream()
-                    .filter(prod -> prod.getName().equals(productName))
-                    .findFirst()
-                    .orElse(null);
+        auditService.logAction("Remove product");
 
-            shop.removeProduct(product);
+        for(var shop : shops) {
+            shop.getProducts().stream()
+                    .filter(prod -> prod.getName().equals(productName))
+                    .findFirst().ifPresent(shop::removeProduct);
         }
     }
 
     @Override
     public void removeOrder(int orderId) {
+        auditService.logAction("Remove order");
         orders.removeIf(order -> order.getOrderId() == orderId);
     }
 
     public void logOut() {
+        auditService.logAction("Log out");
         registration.logOut(owner.getUserId(), owner.getName());
     }
 

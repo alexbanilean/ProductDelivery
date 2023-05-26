@@ -11,6 +11,8 @@ public class DatabaseManager {
     private final DatabaseSetup databaseSetup;
     private final Scanner scanner;
 
+    private AuditService auditService = AuditService.getInstance();
+
     private static DatabaseManager instance = null;
 
     private void initDatabase() {
@@ -45,6 +47,8 @@ public class DatabaseManager {
     }
 
     private void insertProduct() {
+        auditService.logAction("Insert product");
+
         System.out.println("What type of product do you want to insert?");
         System.out.println("1. Food");
         System.out.println("2. Drink");
@@ -91,6 +95,8 @@ public class DatabaseManager {
     }
 
     private void getProductByName() {
+        auditService.logAction("Get product by name");
+
         System.out.println("What type of product do you want to get?");
         System.out.println("1. Food");
         System.out.println("2. Drink");
@@ -135,6 +141,8 @@ public class DatabaseManager {
     }
 
     private void updateProductPrice() {
+        auditService.logAction("Update product price");
+
         System.out.println("What type of product do you want to update?");
         System.out.println("1. Food");
         System.out.println("2. Drink");
@@ -178,6 +186,8 @@ public class DatabaseManager {
     }
 
     private void deleteProduct() {
+        auditService.logAction("Delete product");
+
         System.out.println("What type of product do you want to delete?");
         System.out.println("1. Food");
         System.out.println("2. Drink");

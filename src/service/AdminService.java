@@ -13,8 +13,9 @@ public class AdminService implements IAdminService {
 
     private static AdminService adminService = new AdminService();
     private Data data = Data.getData();
+    private AuditService auditService = AuditService.getInstance();
     private Registration registration = Registration.getRegistration();
-    private Administrator admin = (Administrator) registration.getCurrentUser();
+    private Administrator admin = (Administrator) Registration.getCurrentUser();
 
     private AdminService() {}
     public static AdminService getAdminService() {
@@ -61,7 +62,7 @@ public class AdminService implements IAdminService {
                 System.out.println("3. Library");
                 System.out.println("4. Florist");
                 System.out.println("5. Pharmacy");
-                System.out.println("Enter shop type: ");
+                System.out.println("Enter shop type name: ");
                 String shopType = scanner.nextLine();
                 Shop shop = ShopFactory.createShop(shopType);
                 shop.read(scanner);
@@ -74,7 +75,7 @@ public class AdminService implements IAdminService {
                 System.out.println("4. Flower");
                 System.out.println("5. Bouquet");
                 System.out.println("6. Medicine");
-                System.out.println("Enter product type: ");
+                System.out.println("Enter product type name: ");
                 String productType = scanner.nextLine();
                 Product product = ProductFactory.createProduct(productType);
                 product.read(scanner);
@@ -106,6 +107,7 @@ public class AdminService implements IAdminService {
 
     @Override
     public void listAllShops() {
+        auditService.logAction("List all shops");
 
         System.out.println("\n----------Shops----------");
 
@@ -115,6 +117,7 @@ public class AdminService implements IAdminService {
 
     @Override
     public void listAllProducts() {
+        auditService.logAction("List all products");
 
         System.out.println("\n----------Products----------");
 
@@ -127,6 +130,7 @@ public class AdminService implements IAdminService {
 
     @Override
     public void listAllOrders() {
+        auditService.logAction("List all orders");
 
         System.out.println("\n----------Orders----------");
 
@@ -136,11 +140,13 @@ public class AdminService implements IAdminService {
 
     @Override
     public void addShop(Shop shop) {
+        auditService.logAction("Add shop");
         data.addShop(shop);
     }
 
     @Override
     public void addProduct(String shopName, Product product) {
+        auditService.logAction("Add product");
         data.getShops().stream()
                 .filter(shop -> shop.getName().equals(shopName))
                 .findFirst()
@@ -149,6 +155,7 @@ public class AdminService implements IAdminService {
 
     @Override
     public void removeShop(String shopName) {
+        auditService.logAction("Remove shop");
         data.getShops().stream()
                 .filter(shop -> shop.getName().equals(shopName))
                 .findFirst().ifPresent(shopToRemove -> data.removeShop(shopToRemove));
@@ -156,6 +163,7 @@ public class AdminService implements IAdminService {
 
     @Override
     public void removeProduct(String shopName, String productName) {
+        auditService.logAction("Remove product");
         data.getShops().stream()
                 .filter(shop -> shop.getName().equals(shopName))
                 .findFirst().ifPresent(shopFound -> shopFound.getProducts().stream()
@@ -165,12 +173,14 @@ public class AdminService implements IAdminService {
 
     @Override
     public void removeOrder(int orderId) {
+        auditService.logAction("Remove order");
         data.getOrders().stream()
                 .filter(ord -> ord.getOrderId() == orderId)
                 .findFirst().ifPresent(order -> data.removeOrder(order));
     }
 
     public void logOut() {
+        auditService.logAction("Log out");
         registration.logOut(admin.getUserId(), admin.getName());
     }
 

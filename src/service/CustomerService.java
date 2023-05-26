@@ -11,6 +11,7 @@ public class CustomerService implements ICustomerService{
 
     private static CustomerService customerService = new CustomerService();
     private Data data = Data.getData();
+    private AuditService auditService = AuditService.getInstance();
     private Registration registration = Registration.getRegistration();
     private Customer customer = (Customer) Registration.getCurrentUser();
 
@@ -64,6 +65,7 @@ public class CustomerService implements ICustomerService{
 
     @Override
     public void listAllShops() {
+        auditService.logAction("List all shops");
 
         System.out.println("\n----------Shops----------");
 
@@ -73,6 +75,7 @@ public class CustomerService implements ICustomerService{
 
     @Override
     public void listAllProducts() {
+        auditService.logAction("List all products");
 
         System.out.println("\n----------Products----------");
 
@@ -85,11 +88,13 @@ public class CustomerService implements ICustomerService{
 
     @Override
     public void addOrder(Order order) {
+        auditService.logAction("Add order");
         data.addOrder(order);
     }
 
     @Override
     public void removeOrder(int orderId) {
+        auditService.logAction("Remove order");
         Order order = data.getOrders().stream()
                 .filter(ord -> ord.getOrderId() == orderId)
                 .findFirst()
@@ -100,6 +105,7 @@ public class CustomerService implements ICustomerService{
     }
 
     public void logOut() {
+        auditService.logAction("Log out");
         registration.logOut(customer.getUserId(), customer.getName());
     }
 

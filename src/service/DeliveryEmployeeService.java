@@ -12,8 +12,9 @@ public class DeliveryEmployeeService implements IDeliveryEmployeeService {
 
     private static DeliveryEmployeeService deliveryEmployeeService = new DeliveryEmployeeService();
     private Data data = Data.getData();
+    private AuditService auditService = AuditService.getInstance();
     private Registration registration = Registration.getRegistration();
-    private DeliveryEmployee deliveryEmployee = (DeliveryEmployee) registration.getCurrentUser();
+    private DeliveryEmployee deliveryEmployee = (DeliveryEmployee) Registration.getCurrentUser();
 
     private DeliveryEmployeeService() {}
 
@@ -64,6 +65,7 @@ public class DeliveryEmployeeService implements IDeliveryEmployeeService {
 
     @Override
     public void listAllOrders() {
+        auditService.logAction("List all orders");
 
         System.out.println("\n----------Orders----------");
 
@@ -73,6 +75,8 @@ public class DeliveryEmployeeService implements IDeliveryEmployeeService {
 
     @Override
     public void takeOrder(int orderId) {
+        auditService.logAction("Take order");
+
         try {
             Order order = data.getOrders().stream().filter(o -> o.getOrderId() == orderId)
                     .findFirst().orElse(null);
@@ -88,19 +92,18 @@ public class DeliveryEmployeeService implements IDeliveryEmployeeService {
 
     @Override
     public void deliverOrder(int orderId) {
-        try {
-            Order order = data.getOrders().stream().filter(o -> o.getOrderId() == orderId)
-                    .findFirst().orElse(null);
+        auditService.logAction("Deliver order");
 
-            if(order != null) {
-                order.setOrderStatus(OrderStatus.DELIVERED);
-            }
+        try {
+            data.getOrders().stream().filter(o -> o.getOrderId() == orderId)
+                    .findFirst().ifPresent(order -> order.setOrderStatus(OrderStatus.DELIVERED));
         } catch (Exception e) {
             System.out.println("Order not found!");
         }
     }
 
     public void logOut() {
+        auditService.logAction("Log out");
         registration.logOut(deliveryEmployee.getUserId(), deliveryEmployee.getName());
     }
 

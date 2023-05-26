@@ -1,6 +1,7 @@
 package database;
 
 import repository.RepositoryHelper;
+import service.AuditService;
 
 import java.io.*;
 import java.sql.*;
@@ -9,8 +10,11 @@ import java.util.Arrays;
 
 public class DatabaseSetup {
 
+    private AuditService auditService = AuditService.getInstance();
+
     public void createTables() {
-        File file = new File("Files/QueryCreateTables.txt");
+        auditService.logAction("Create tables");
+        File file = new File("files/QueryCreateTables.txt");
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -37,7 +41,8 @@ public class DatabaseSetup {
     }
 
     public void addRows() {
-        File file = new File("Files/QueryAddRows.txt");
+        auditService.logAction("Add rows");
+        File file = new File("files/QueryAddRows.txt");
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -64,7 +69,8 @@ public class DatabaseSetup {
     }
 
     public void deleteAllRows() {
-        File file = new File("Files/QueryDeleteAllRows.txt");
+        auditService.logAction("Delete all rows");
+        File file = new File("files/QueryDeleteAllRows.txt");
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -91,7 +97,8 @@ public class DatabaseSetup {
     }
 
     public void dropAllTables() {
-        File file = new File("Files/QueryDropAllTables.txt");
+        auditService.logAction("Drop all tables");
+        File file = new File("files/QueryDropAllTables.txt");
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -118,6 +125,7 @@ public class DatabaseSetup {
     }
 
     public void showTable(String tableName) {
+        auditService.logAction("Show table " + tableName);
         String query = "SELECT * FROM ";
 
         ArrayList<String> tables = new ArrayList<>(Arrays.asList("product_types",
