@@ -4,12 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47ef8aed-d8e9-4e49-8905-ef1ca70f3400" name="Changes" comment="Resolved code review issue">
-      <change afterPath="$PROJECT_DIR$/files/QueryCreateTables.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/DatabaseConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/DatabaseSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repository/RepositoryHelper.java" afterDir="false" />
+    <list default="true" id="47ef8aed-d8e9-4e49-8905-ef1ca70f3400" name="Changes" comment="Added DB repositories">
+      <change afterPath="$PROJECT_DIR$/files/QueryAddRows.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/QueryDeleteAllRows.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/QueryDropAllTables.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/DrinkRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/FlowerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/FoodRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/MedicineRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/ProductTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/DatabaseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductDelivery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductDelivery.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/QueryCreateTables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/files/QueryCreateTables.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/DatabaseSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DatabaseSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/RepositoryHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/RepositoryHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,21 +64,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-j-8.0.33.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -80,7 +96,7 @@
       <workItem from="1681132034672" duration="2049000" />
       <workItem from="1682348608867" duration="641000" />
       <workItem from="1684162958490" duration="57000" />
-      <workItem from="1684574706840" duration="15902000" />
+      <workItem from="1684574706840" duration="45975000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1680432875029</created>
@@ -117,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684657752786</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added DB config and create table queries">
+      <created>1684671367770</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684671367770</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +172,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Resolved code review issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolved code review issue" />
+    <MESSAGE value="Added DB config and create table queries" />
+    <MESSAGE value="Added DB repositories" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DB repositories" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,17 +1,35 @@
 import java.util.Scanner;
+
+import database.DatabaseConfiguration;
 import registration.Registration;
-import service.AdminService;
-import service.CustomerService;
-import service.DeliveryEmployeeService;
-import service.OwnerService;
+import service.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Registration registration = Registration.getRegistration();
+        DatabaseManager databaseManager = DatabaseManager.getInstance();
 
         while (true) {
             System.out.println("----------Welcome to the Product Delivery App!----------");
+
+            System.out.println("Do you want to use the database? (y/n)");
+            String option = scanner.nextLine();
+
+            if (!option.equals("y") && !option.equals("n")) {
+                System.out.println("Please enter a valid answer!");
+                continue;
+            }
+
+            if(option.equals("y")) {
+                databaseManager.DatabaseManagerMenu();
+
+                System.out.println("Do you want to exit the app? (y/n)");
+                String exit = scanner.nextLine();
+                if (exit.equals("y")) {
+                    break;
+                }
+            }
 
             System.out.println("Do you have an account? (y/n)");
             String answer = scanner.nextLine();
@@ -24,22 +42,25 @@ public class Main {
             if (answer.equals("n")) {
                 System.out.println("-----Registration-----");
                 System.out.println("Are you a administrator, owner, customer or delivery employee? (a/o/c/e)");
+                label:
                 while (true) {
                     String type = scanner.nextLine();
-                    if (type.equals("a")) {
-                        registration.registerAdmin(scanner);
-                        break;
-                    } else if (type.equals("o")) {
-                        registration.registerOwner(scanner);
-                        break;
-                    } else if (type.equals("c")) {
-                        registration.registerCustomer(scanner);
-                        break;
-                    } else if (type.equals("e")) {
-                        registration.registerDeliveryEmployee(scanner);
-                        break;
-                    } else {
-                        System.out.println("Please enter a valid answer!");
+                    switch (type) {
+                        case "a":
+                            registration.registerAdmin(scanner);
+                            break label;
+                        case "o":
+                            registration.registerOwner(scanner);
+                            break label;
+                        case "c":
+                            registration.registerCustomer(scanner);
+                            break label;
+                        case "e":
+                            registration.registerDeliveryEmployee(scanner);
+                            break label;
+                        default:
+                            System.out.println("Please enter a valid answer!");
+                            break;
                     }
                 }
             }
@@ -74,5 +95,6 @@ public class Main {
         }
 
         scanner.close();
+        DatabaseConfiguration.closeDatabaseConnection();
     }
 }

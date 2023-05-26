@@ -28,7 +28,7 @@ public class RepositoryHelper {
         statement.executeUpdate(query);
     }
 
-    public ResultSet executeQuery(Connection connection, String query) throws SQLException {
+    public ResultSet executeQuerySql(Connection connection, String query) throws SQLException {
         Statement statement = connection.createStatement();
         return statement.executeQuery(query);
     }
