@@ -20,7 +20,7 @@ public class Bar extends Shop{
         this.rating = rating;
         this.deliveryEmployees = deliveryEmployees;
         this.products = products;
-        this.drinksMenu = new ArrayList<Drink>();
+        this.drinksMenu = new ArrayList<>();
 
         for (Product product : products) {
             if (product instanceof Drink) {
@@ -64,14 +64,16 @@ public class Bar extends Shop{
     }
 
     @Override
-    public void read(Scanner scanner) {
+    public void read(Scanner scanner, boolean optionOwner) {
 
         System.out.println("Enter the name of the bar: ");
         setName(scanner.nextLine());
 
-        Owner owner = new Owner();
-        owner.read(scanner);
-        setOwner(owner);
+        if(optionOwner) {
+            Owner owner = new Owner();
+            owner.read(scanner);
+            setOwner(owner);
+        }
 
         System.out.println("Enter the address of the bar: ");
         setAddress(scanner.nextLine());
@@ -84,7 +86,7 @@ public class Bar extends Shop{
         int numberOfDeliveryEmployees = scanner.nextInt();
         scanner.nextLine();
 
-        deliveryEmployees = new ArrayList<DeliveryEmployee>();
+        deliveryEmployees = new ArrayList<>();
 
         for (int i = 0; i < numberOfDeliveryEmployees; i++) {
             DeliveryEmployee deliveryEmployee = new DeliveryEmployee();
@@ -96,8 +98,8 @@ public class Bar extends Shop{
         int numberOfProducts = scanner.nextInt();
         scanner.nextLine();
 
-        products = new ArrayList<Product>();
-        drinksMenu = new ArrayList<Drink>();
+        products = new ArrayList<>();
+        drinksMenu = new ArrayList<>();
 
         for (int i = 0; i < numberOfProducts; i++) {
             Product product = new Drink();

@@ -14,27 +14,35 @@ import java.util.stream.Collectors;
 
 public class OwnerService implements IOwnerService {
 
-    private static OwnerService ownerService = new OwnerService();
-    private Data data = Data.getData();
-    private AuditService auditService = AuditService.getInstance();
-    private Registration registration = Registration.getRegistration();
-    private Owner owner = (Owner) Registration.getCurrentUser();
-    private ArrayList<Order> orders;
-    private ArrayList<Shop> shops;
-    private ArrayList<String> shopNames;
+    private static final OwnerService ownerService = new OwnerService();
+    private final Data data = Data.getData();
+    private final AuditService auditService = AuditService.getInstance();
+    private final Registration registration = Registration.getRegistration();
+    private final Owner owner = (Owner) Registration.getCurrentUser();
+    private final ArrayList<Order> orders;
+    private final ArrayList<Shop> shops;
+    private final ArrayList<String> shopNames;
 
     private OwnerService() {
 
-        shopNames = (ArrayList<String>) owner.getShops().stream().map(Shop::getName)
-                                             .collect(Collectors.toList());
+        if(owner.getShops() != null) {
+            shopNames = (ArrayList<String>) owner.getShops().stream()
+                    .map(Shop::getName)
+                    .collect(Collectors.toList());
 
-        orders = (ArrayList<Order>) data.getOrders().stream()
-                .filter(order -> shopNames.contains(order.getShop().getName()))
-                .collect(Collectors.toList());
+            orders = (ArrayList<Order>) data.getOrders().stream()
+                    .filter(order -> shopNames.contains(order.getShop().getName()))
+                    .collect(Collectors.toList());
 
-        shops = (ArrayList<Shop>) data.getShops().stream()
-                .filter(shop -> shopNames.contains(shop.getName()))
-                .collect(Collectors.toList());
+            shops = (ArrayList<Shop>) data.getShops().stream()
+                    .filter(shop -> shopNames.contains(shop.getName()))
+                    .collect(Collectors.toList());
+        }
+        else {
+            shopNames = new ArrayList<>();
+            orders = new ArrayList<>();
+            shops = new ArrayList<>();
+        }
     }
 
     public static OwnerService getOwnerService() {
@@ -99,16 +107,6 @@ public class OwnerService implements IOwnerService {
                 break;
             }
         }
-    }
-
-    @Override
-    public void listAllShops() {
-        auditService.logAction("List all shops");
-
-        System.out.println("\n----------Shops----------");
-
-        for(var shop : shops)
-            System.out.println(shop.getName());
     }
 
     @Override

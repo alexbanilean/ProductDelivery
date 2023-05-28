@@ -23,8 +23,8 @@ public class Restaurant extends Shop{
         this.rating = rating;
         this.deliveryEmployees = deliveryEmployees;
         this.products = products;
-        this.foodsMenu = new ArrayList<Food>();
-        this.drinksMenu = new ArrayList<Drink>();
+        this.foodsMenu = new ArrayList<>();
+        this.drinksMenu = new ArrayList<>();
 
         for (Product product : products) {
             if (product instanceof Food) {
@@ -82,14 +82,16 @@ public class Restaurant extends Shop{
     }
 
     @Override
-    public void read(Scanner scanner) {
+    public void read(Scanner scanner, boolean optionOwner) {
 
         System.out.print("Enter the name of the restaurant: ");
         setName(scanner.nextLine());
 
-        Owner owner = new Owner();
-        owner.read(scanner);
-        setOwner(owner);
+        if(optionOwner) {
+            Owner owner = new Owner();
+            owner.read(scanner);
+            setOwner(owner);
+        }
 
         System.out.print("Enter the address of the restaurant: ");
         setAddress(scanner.nextLine());
@@ -102,7 +104,7 @@ public class Restaurant extends Shop{
         int numberOfDeliveryEmployees = scanner.nextInt();
         scanner.nextLine();
 
-        deliveryEmployees = new ArrayList<DeliveryEmployee>();
+        deliveryEmployees = new ArrayList<>();
         for (int i = 0; i < numberOfDeliveryEmployees; i++) {
             DeliveryEmployee deliveryEmployee = new DeliveryEmployee();
             deliveryEmployee.read(scanner);
@@ -113,9 +115,9 @@ public class Restaurant extends Shop{
         int numberOfProducts = scanner.nextInt();
         scanner.nextLine();
 
-        products = new ArrayList<Product>();
-        foodsMenu = new ArrayList<Food>();
-        drinksMenu = new ArrayList<Drink>();
+        products = new ArrayList<>();
+        foodsMenu = new ArrayList<>();
+        drinksMenu = new ArrayList<>();
 
         for (int i = 0; i < numberOfProducts; i++) {
             System.out.println("Enter the number of type of the product: ");

@@ -11,11 +11,11 @@ import java.util.Scanner;
 
 public class AdminService implements IAdminService {
 
-    private static AdminService adminService = new AdminService();
-    private Data data = Data.getData();
-    private AuditService auditService = AuditService.getInstance();
-    private Registration registration = Registration.getRegistration();
-    private Administrator admin = (Administrator) Registration.getCurrentUser();
+    private static final AdminService adminService = new AdminService();
+    private final Data data = Data.getData();
+    private final AuditService auditService = AuditService.getInstance();
+    private final Registration registration = Registration.getRegistration();
+    private final Administrator admin = (Administrator) Registration.getCurrentUser();
 
     private AdminService() {}
     public static AdminService getAdminService() {
@@ -65,7 +65,7 @@ public class AdminService implements IAdminService {
                 System.out.println("Enter shop type name: ");
                 String shopType = scanner.nextLine();
                 Shop shop = ShopFactory.createShop(shopType);
-                shop.read(scanner);
+                shop.read(scanner, true);
                 addShop(shop);
             } else if (choice == 5) {
                 System.out.println("The available product types are: ");
@@ -141,7 +141,7 @@ public class AdminService implements IAdminService {
     @Override
     public void addShop(Shop shop) {
         auditService.logAction("Add shop");
-        data.addShop(shop);
+        Data.addShop(shop);
     }
 
     @Override
@@ -158,7 +158,7 @@ public class AdminService implements IAdminService {
         auditService.logAction("Remove shop");
         data.getShops().stream()
                 .filter(shop -> shop.getName().equals(shopName))
-                .findFirst().ifPresent(shopToRemove -> data.removeShop(shopToRemove));
+                .findFirst().ifPresent(Data::removeShop);
     }
 
     @Override
@@ -176,7 +176,7 @@ public class AdminService implements IAdminService {
         auditService.logAction("Remove order");
         data.getOrders().stream()
                 .filter(ord -> ord.getOrderId() == orderId)
-                .findFirst().ifPresent(order -> data.removeOrder(order));
+                .findFirst().ifPresent(Data::removeOrder);
     }
 
     public void logOut() {

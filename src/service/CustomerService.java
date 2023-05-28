@@ -9,11 +9,11 @@ import java.util.Scanner;
 
 public class CustomerService implements ICustomerService{
 
-    private static CustomerService customerService = new CustomerService();
-    private Data data = Data.getData();
-    private AuditService auditService = AuditService.getInstance();
-    private Registration registration = Registration.getRegistration();
-    private Customer customer = (Customer) Registration.getCurrentUser();
+    private static final CustomerService customerService = new CustomerService();
+    private final Data data = Data.getData();
+    private final AuditService auditService = AuditService.getInstance();
+    private final Registration registration = Registration.getRegistration();
+    private final Customer customer = (Customer) Registration.getCurrentUser();
 
     private CustomerService() {}
     public static CustomerService getCustomerService() {

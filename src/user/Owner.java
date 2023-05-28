@@ -1,7 +1,9 @@
 package user;
 
+import exceptions.InvalidShopTypeException;
 import factories.ShopFactory;
 import shop.Shop;
+import shared.Data;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,7 +11,7 @@ import java.util.Scanner;
 import static shared.Data.getData;
 
 public class Owner extends User{
-    private ArrayList<Shop> shops;
+    private ArrayList<Shop> shops = new ArrayList<>();
 
     public Owner() {}
 
@@ -32,16 +34,16 @@ public class Owner extends User{
     @Override
     public void read(Scanner scanner) {
 
-        System.out.print("Enter owner name: ");
+        System.out.println("Enter owner name: ");
         setName(scanner.nextLine());
 
-        System.out.print("Enter owner email: ");
+        System.out.println("Enter owner email: ");
         setEmail(scanner.nextLine());
 
-        System.out.print("Enter owner password: ");
+        System.out.println("Enter owner password: ");
         setPassword(scanner.nextLine());
 
-        System.out.print("Enter owner phone number: ");
+        System.out.println("Enter owner phone number: ");
         setPhoneNumber(scanner.nextLine());
 
         while(true) {
@@ -66,11 +68,23 @@ public class Owner extends User{
                     System.out.println("3. Library");
                     System.out.println("4. Florist");
                     System.out.println("5. Pharmacy");
-                    System.out.println("Enter shop type: ");
-                    String type = scanner.nextLine();
-                    Shop shop = ShopFactory.createShop(type);
-                    shop.read(scanner);
-                    shops.add(shop);
+                    System.out.println("Enter shop type name: ");
+
+                    try {
+                        String type = scanner.nextLine();
+
+                        if(!type.equalsIgnoreCase("Restaurant") && !type.equalsIgnoreCase("Bar") && !type.equalsIgnoreCase("Library") && !type.equalsIgnoreCase("Florist") && !type.equalsIgnoreCase("Pharmacy"))
+                            throw new InvalidShopTypeException("Invalid shop type: " + type);
+
+                        Shop shop = ShopFactory.createShop(type);
+
+                        shop.read(scanner, false);
+                        shops.add(shop);
+                        Data.addShop(shop);
+                    }
+                    catch (InvalidShopTypeException e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
             } else if (ans.equalsIgnoreCase("n")) {
                 break;

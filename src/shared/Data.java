@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import shop.Shop;
 
 public class Data {
-    private static Data data = new Data();
-    private ArrayList<Shop> shops = new ArrayList<Shop>();
-    private ArrayList<Order> orders = new ArrayList<Order>();
+    private static final Data data = new Data();
+    private static final ArrayList<Shop> shops = new ArrayList<>();
+    private static final ArrayList<Order> orders = new ArrayList<>();
 
     private Data() {}
 
@@ -22,19 +22,19 @@ public class Data {
         return orders;
     }
 
-    public void addShop(Shop shop) {
+    public static void addShop(Shop shop) {
         shops.add(shop);
     }
 
-    public void addOrder(Order order) {
+    public static void addOrder(Order order) {
         orders.add(order);
     }
 
-    public void removeShop(Shop shop) {
+    public static void removeShop(Shop shop) {
         shops.remove(shop);
     }
 
-    public void removeOrder(Order order) {
+    public static void removeOrder(Order order) {
         orders.remove(order);
     }
 }

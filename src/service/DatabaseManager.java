@@ -11,7 +11,7 @@ public class DatabaseManager {
     private final DatabaseSetup databaseSetup;
     private final Scanner scanner;
 
-    private AuditService auditService = AuditService.getInstance();
+    private final AuditService auditService = AuditService.getInstance();
 
     private static DatabaseManager instance = null;
 

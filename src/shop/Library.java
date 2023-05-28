@@ -21,7 +21,7 @@ public class Library extends Shop{
         this.rating = rating;
         this.deliveryEmployees = deliveryEmployees;
         this.products = products;
-        this.books = new ArrayList<Book>();
+        this.books = new ArrayList<>();
 
         for (Product product : products) {
             if (product instanceof Book) {
@@ -65,14 +65,16 @@ public class Library extends Shop{
     }
 
     @Override
-    public void read(Scanner scanner) {
+    public void read(Scanner scanner, boolean optionOwner) {
 
         System.out.print("Enter library name: ");
         setName(scanner.nextLine());
 
-        Owner owner = new Owner();
-        owner.read(scanner);
-        setOwner(owner);
+        if(optionOwner) {
+            Owner owner = new Owner();
+            owner.read(scanner);
+            setOwner(owner);
+        }
 
         System.out.print("Enter library address: ");
         setAddress(scanner.nextLine());
@@ -85,7 +87,7 @@ public class Library extends Shop{
         int deliveryEmployeesCount = scanner.nextInt();
         scanner.nextLine();
 
-        deliveryEmployees = new ArrayList<DeliveryEmployee>();
+        deliveryEmployees = new ArrayList<>();
 
         for (int i = 0; i < deliveryEmployeesCount; i++) {
             DeliveryEmployee deliveryEmployee = new DeliveryEmployee();
@@ -97,7 +99,7 @@ public class Library extends Shop{
         int productsCount = scanner.nextInt();
         scanner.nextLine();
 
-        products = new ArrayList<Product>();
+        products = new ArrayList<>();
 
         for (int i = 0; i < productsCount; i++) {
             Product product = new Book();

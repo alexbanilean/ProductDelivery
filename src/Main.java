@@ -40,27 +40,24 @@ public class Main {
             }
 
             if (answer.equals("n")) {
-                System.out.println("-----Registration-----");
-                System.out.println("Are you a administrator, owner, customer or delivery employee? (a/o/c/e)");
-                label:
+
                 while (true) {
+                    System.out.println("-----Registration-----");
+                    System.out.println("Are you a administrator, owner, customer or delivery employee? (a/o/c/e)");
+
                     String type = scanner.nextLine();
+                    int result = -1;
+
                     switch (type) {
-                        case "a":
-                            registration.registerAdmin(scanner);
-                            break label;
-                        case "o":
-                            registration.registerOwner(scanner);
-                            break label;
-                        case "c":
-                            registration.registerCustomer(scanner);
-                            break label;
-                        case "e":
-                            registration.registerDeliveryEmployee(scanner);
-                            break label;
-                        default:
-                            System.out.println("Please enter a valid answer!");
-                            break;
+                        case "a" -> result = registration.registerAdmin(scanner);
+                        case "o" -> result = registration.registerOwner(scanner);
+                        case "c" -> result = registration.registerCustomer(scanner);
+                        case "e" -> result = registration.registerDeliveryEmployee(scanner);
+                        default -> System.out.println("Please enter a valid answer!");
+                    }
+
+                    if(result == 0) {
+                        break;
                     }
                 }
             }

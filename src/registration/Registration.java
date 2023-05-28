@@ -9,9 +9,9 @@ import java.util.Scanner;
 public class Registration implements IRegistration {
 
     private static final Registration registration = new Registration();
-    private static HashSet<User> users = new HashSet<>();
+    private static final HashSet<User> users = new HashSet<>();
     private static User currentUser = null;
-    private AuditService auditService = AuditService.getInstance();
+    private final AuditService auditService = AuditService.getInstance();
 
     private Registration() {}
 
@@ -78,54 +78,94 @@ public class Registration implements IRegistration {
     }
 
     @Override
-    public void registerAdmin(Scanner scanner) {
+    public int registerAdmin(Scanner scanner) {
         auditService.logAction("Register admin");
 
         Administrator administrator = new Administrator();
         administrator.read(scanner);
+
+        for (User user : users) {
+            if (user.getName().equals(administrator.getName())) {
+                System.out.println("Username already used. Registration failed.");
+                return -1;
+            }
+        }
+
         administrator.setUserId(users.size() + 1);
 
         users.add(administrator);
 
         System.out.println("Admin " + administrator.getName() + " registered.");
+
+        return 0;
     }
 
     @Override
-    public void registerOwner(Scanner scanner) {
+    public int registerOwner(Scanner scanner) {
         auditService.logAction("Register owner");
 
         Owner owner = new Owner();
         owner.read(scanner);
+
+        for (User user : users) {
+            if (user.getName().equals(owner.getName())) {
+                System.out.println("Username already used. Registration failed.");
+                return -1;
+            }
+        }
+
         owner.setUserId(users.size() + 1);
 
         users.add(owner);
 
         System.out.println("Owner " + owner.getName() + " registered.");
+
+        return 0;
     }
 
     @Override
-    public void registerCustomer(Scanner scanner) {
+    public int registerCustomer(Scanner scanner) {
         auditService.logAction("Register customer");
 
         Customer customer = new Customer();
         customer.read(scanner);
+
+        for (User user : users) {
+            if (user.getName().equals(customer.getName())) {
+                System.out.println("Username already used. Registration failed.");
+                return -1;
+            }
+        }
+
         customer.setUserId(users.size() + 1);
 
         users.add(customer);
 
         System.out.println("Customer " + customer.getName() + " registered.");
+
+        return 0;
     }
 
     @Override
-    public void registerDeliveryEmployee(Scanner scanner) {
+    public int registerDeliveryEmployee(Scanner scanner) {
         auditService.logAction("Register delivery employee");
 
         DeliveryEmployee deliveryEmployee = new DeliveryEmployee();
         deliveryEmployee.read(scanner);
+
+        for (User user : users) {
+            if (user.getName().equals(deliveryEmployee.getName())) {
+                System.out.println("Username already used. Registration failed.");
+                return -1;
+            }
+        }
+
         deliveryEmployee.setUserId(users.size() + 1);
 
         users.add(deliveryEmployee);
 
         System.out.println("Delivery employee " + deliveryEmployee.getName() + " registered.");
+
+        return 0;
     }
 }

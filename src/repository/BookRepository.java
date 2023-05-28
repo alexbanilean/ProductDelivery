@@ -2,7 +2,6 @@ package repository;
 
 import database.DatabaseConfiguration;
 import product.Book;
-import service.DatabaseManager;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

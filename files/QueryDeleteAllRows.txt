@@ -1,6 +1,6 @@
 DELETE FROM orders_shop_products
 DELETE FROM orders
-DELETE FROM shop_products
+DELETE FROM shops_products
 DELETE FROM delivery_employees
 DELETE FROM shops
 DELETE FROM shop_types

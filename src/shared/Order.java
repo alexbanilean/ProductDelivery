@@ -174,7 +174,7 @@ public class Order {
 
         getData().getShops().stream()
                  .filter(shop -> shop.getName().equals(shopName))
-                 .findFirst().ifPresent(shop -> setShop(shop));
+                 .findFirst().ifPresent(this::setShop);
 
         System.out.println("Enter order date: ");
         this.orderDate = LocalDate.parse(scanner.nextLine());

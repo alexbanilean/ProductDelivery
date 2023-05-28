@@ -20,7 +20,10 @@ public class ProductRepository {
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            return resultSet.getInt("id");
+            if(resultSet.next())
+                return resultSet.getInt("id");
+            else
+                throw new RuntimeException("No such product type");
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException(e);

@@ -5,16 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47ef8aed-d8e9-4e49-8905-ef1ca70f3400" name="Changes" comment="Added audit service">
-      <change afterPath="$PROJECT_DIR$/files/Audit.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/AuditService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/InvalidShopTypeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Audit.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/Audit.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/QueryDeleteAllRows.txt" beforeDir="false" afterPath="$PROJECT_DIR$/files/QueryDeleteAllRows.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/DatabaseSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DatabaseSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/registration/IRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/registration/IRegistration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/registration/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/registration/Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/ProductTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/ProductTypeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DatabaseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DeliveryEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DeliveryEmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/IOwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/IOwnerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/OwnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Bar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/Florist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Florist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Pharmacy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shop/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/Owner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +105,7 @@
       <workItem from="1681132034672" duration="2049000" />
       <workItem from="1682348608867" duration="641000" />
       <workItem from="1684162958490" duration="57000" />
-      <workItem from="1684574706840" duration="48997000" />
+      <workItem from="1684574706840" duration="56496000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1680432875029</created>
@@ -140,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685133190587</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added audit service">
+      <created>1685141052030</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685141052030</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

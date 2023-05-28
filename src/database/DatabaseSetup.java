@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class DatabaseSetup {
 
-    private AuditService auditService = AuditService.getInstance();
+    private final AuditService auditService = AuditService.getInstance();
 
     public void createTables() {
         auditService.logAction("Create tables");

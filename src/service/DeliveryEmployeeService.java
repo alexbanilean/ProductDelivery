@@ -10,11 +10,11 @@ import java.util.Scanner;
 
 public class DeliveryEmployeeService implements IDeliveryEmployeeService {
 
-    private static DeliveryEmployeeService deliveryEmployeeService = new DeliveryEmployeeService();
-    private Data data = Data.getData();
-    private AuditService auditService = AuditService.getInstance();
-    private Registration registration = Registration.getRegistration();
-    private DeliveryEmployee deliveryEmployee = (DeliveryEmployee) Registration.getCurrentUser();
+    private static final DeliveryEmployeeService deliveryEmployeeService = new DeliveryEmployeeService();
+    private final Data data = Data.getData();
+    private final AuditService auditService = AuditService.getInstance();
+    private final Registration registration = Registration.getRegistration();
+    private final DeliveryEmployee deliveryEmployee = (DeliveryEmployee) Registration.getCurrentUser();
 
     private DeliveryEmployeeService() {}
 

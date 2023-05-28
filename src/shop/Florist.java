@@ -24,8 +24,8 @@ public class Florist extends Shop{
         this.rating = rating;
         this.deliveryEmployees = deliveryEmployees;
         this.products = products;
-        this.flowers = new HashSet<Flower>();
-        this.bouquets = new HashSet<Bouquet>();
+        this.flowers = new HashSet<>();
+        this.bouquets = new HashSet<>();
 
         for (Product product : products) {
             if (product instanceof Flower) {
@@ -88,14 +88,16 @@ public class Florist extends Shop{
     }
 
     @Override
-    public void read(Scanner scanner) {
+    public void read(Scanner scanner, boolean optionOwner) {
 
         System.out.print("Enter florist name: ");
         setName(scanner.nextLine());
 
-        Owner owner = new Owner();
-        owner.read(scanner);
-        setOwner(owner);
+        if(optionOwner) {
+            Owner owner = new Owner();
+            owner.read(scanner);
+            setOwner(owner);
+        }
 
         System.out.print("Enter florist address: ");
         setAddress(scanner.nextLine());
@@ -108,7 +110,7 @@ public class Florist extends Shop{
         int numberOfDeliveryEmployees = scanner.nextInt();
         scanner.nextLine();
 
-        deliveryEmployees = new ArrayList<DeliveryEmployee>();
+        deliveryEmployees = new ArrayList<>();
 
         for (int i = 0; i < numberOfDeliveryEmployees; i++) {
             DeliveryEmployee deliveryEmployee = new DeliveryEmployee();
@@ -120,9 +122,9 @@ public class Florist extends Shop{
         int numberOfProducts = scanner.nextInt();
         scanner.nextLine();
 
-        products = new ArrayList<Product>();
-        flowers = new HashSet<Flower>();
-        bouquets = new HashSet<Bouquet>();
+        products = new ArrayList<>();
+        flowers = new HashSet<>();
+        bouquets = new HashSet<>();
 
         for (int i = 0; i < numberOfProducts; i++) {
             System.out.println("Enter the number of type of the product: ");

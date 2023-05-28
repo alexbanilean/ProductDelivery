@@ -71,7 +71,7 @@ public abstract class Shop {
 
     public abstract void removeProduct(Product product);
 
-    public abstract void read(Scanner scanner);
+    public abstract void read(Scanner scanner, boolean optionOwner);
 
     @Override
     public abstract String toString();
