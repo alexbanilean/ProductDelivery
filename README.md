@@ -1,13 +1,47 @@
 # Product Delivery
 
+### Requirements second phase
+
+- Database: MySQL
+- Workbench: MySQL Workbench
+
+1. DatabaseConfiguration class:
+	- getDatabaseConnection()
+	- closeDatabaseConnection()
+
+2. RepositoryHelper class:
+	- executeSql(Connection connection, String sql)
+	- executeUpdateSql(Connection connection, String sql)
+	- executeQuerySql(Connection connection, String sql)
+
+3. DatabaseSetup class:
+	- createTables()
+    - addRows()
+    - deleteAllRows()
+    - dropAllTables()
+    - showTable(String tableName)
+
+4. FoodRepository, DrinkRepository, BookRepository, FlowerRepository, MedicineRepository:
+	- product adding (INSERT :ballot_box_with_check:)
+    - product reading by name (READ :ballot_box_with_check:)
+    - product price updating by name (UPDATE :ballot_box_with_check:)
+    - product deleting by name (DELETE :ballot_box_with_check:)
+    - mapper function
+
+*SQL scripts are in the following files: QueryAddRows.txt, QueryCreateTables.txt, QueryDeleteAllRows.txt, QueryDropAllTables.txt*
+
+5. AuditService class:
+	- logAction(String action)
+    - Audit.csv file
+
 ### Requirements first phase
 
-1. 19 actions (min. 8 actions) :ballot_box_with_check:
-2. 21 classes + 6 interfaces (min. 10 classes) :ballot_box_with_check:
+1. 19 actions (min. 8 actions :ballot_box_with_check:)
+2. 21 classes + 6 interfaces (min. 10 classes :ballot_box_with_check:)
 3. Private/Protected attributes :ballot_box_with_check:
 4. Collections used: List -> ArrayList, Set -> HashSet :ballot_box_with_check:
 5. Inheritance :ballot_box_with_check:
-6. 4 service classes (min. 1 service class) :ballot_box_with_check:
+6. 4 service classes (min. 1 service class :ballot_box_with_check:)
 7. Main class which calls services :ballot_box_with_check:
 
 ## Product (abstract)
